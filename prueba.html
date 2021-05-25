@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Datavolley</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<img id="escudo" src="img/Voleibol Arganda.JPG">
+<br>
+<div class="container">
+  <h2>Partido</h2>
+  <p>Página para recoger las estadísticas del partido</p>
+  <table class="table table-bordered table-hover table-sm">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Dorsal</th>
+                    <th scope="col">Nombre</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <th scope="row"></th>
+                </tr>
+            </tbody>
+    </table>
+
+<div id="caja"> </div>
+
+
+<p>Selecciona una acción</p>
+
+<form name="suscripcion" action="#">
+    <h2>Elige una acción</h2>
+    <input  type="checkbox" name="deportes" value="Deportes" />
+         <label for="deportes">Deportes</label><br/>
+    <input type="checkbox" name="noticias" value="Noticias" />
+         <label for="noticias">Noticias</label><br/>
+    <input type="checkbox" name="economia" value="Economia" />
+         <label for="economia">Economía</label><br/>
+    <input type="checkbox" name="cultura" value ="Cultura" />
+         <label for="cultura">Cultura</label><br/>
+    <input type="checkbox" name="medioambiente" value="Medio Ambiente" />
+         <label for="medioambiente">Medio Ambiente</label><br/><br/>
+    <input  type="button"  name="ver" value="Guardar" onclick="info()" />
+</form>
+
+        <p id="resultadojugador">0</p>
+        <p id="resultadoaccion">0</p>
+        <p id="resultadoestadistica">0</p>
+
+
+        <script>
+            
+            function info() {
+         texto = document.getElementById("caja")
+         texto.innerHTML = "<h3>Usted recibirá información sobre los siguientes temas:</h3>"
+         if (document.suscripcion.deportes.checked == true) {
+            deportes = "<h4>" + document.suscripcion.deportes.value; + "</h4>";
+            }
+         else { deportes = "" }	
+         if (document.suscripcion.noticias.checked == true) {
+            noticias = "<h4>" + document.suscripcion.noticias.value; + "</h4>";
+            }
+         else { noticias = "" }	
+         if (document.suscripcion.economia.checked == true) {
+            economia = "<h4>" + document.suscripcion.economia.value; + "</h4>";
+            }	
+         else { economia = "" }	
+         if (document.suscripcion.cultura.checked == true) {
+            cultura = "<h4>" + document.suscripcion.cultura.value; + "</h4>";
+            }
+         else { cultura = "" }	
+         if (document.suscripcion.medioambiente.checked == true) {
+            medioambiente = "<h4>" + document.suscripcion.medioambiente.value; + "</h4>";
+            }		 		
+         else { medioambiente = "" }	
+         texto.innerHTML += deportes + noticias + economia + cultura + medioambiente
+         }
+
+            
+        </script>
+</div>
+</body>
+</html>
